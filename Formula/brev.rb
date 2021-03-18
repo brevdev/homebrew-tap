@@ -2,8 +2,8 @@ class Brev < Formula
   desc "Brev CLI"
   homepage "https://brev.dev"
   url "https://github.com/brevdev/brev-go-cli/releases/latest/download/brev-osx-64.tar.gz"
-  sha256 "5df4af103289f259c839ec09fb969035fd0e8e40362097caf6aad45b8b1293fd"
-  version "0.1.1"
+  sha256 "d0411965c431d965b310e1b098c80db581b640585f4f66506bc3e8e1dba6fc20"
+  version "0.1.2"
 
   def install
     bin.install "brev"
