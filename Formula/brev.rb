@@ -7,10 +7,15 @@ class Brev < Formula
 
   def install
     bin.install "brev"
-    #(buildpath/"brev").write system "#{bin}/brev", "completion", "bash"
-    (buildpath/"_brev").write system "#{bin}/brev", "completion", "zsh"
-    #bash_completion.install "bash"
-    zsh_completion.install "_brev"
+
+    FileUtils.mkdir_p "completions/zsh"
+    FileUtils.mkdir_p "completions/bash"
+
+    system "bash", "-c", "bash ./brev completion bash > completions/bash/bash"
+    system "bash", "-c", "bash ./brev completion zsh > completions/zsh/_bash"
+    
+    bash_completion.install "completions/bash/bash"
+    zsh_completion.install "completions/zsh/_brev"
   end
 
   test do
