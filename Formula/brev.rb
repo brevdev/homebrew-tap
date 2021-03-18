@@ -7,6 +7,14 @@ class Brev < Formula
 
   def install
     bin.install "brev"
+    system "brev" "completion" "bash" ">" "brev"
+    system "brev" "completion" "zsh" ">" "_brev"
+    bash_completion.install "brev"
+    zsh_completion.install "_brev"
+  end
+
+  test do
+    system "brev version"
   end
 end
 
