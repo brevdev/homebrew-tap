@@ -9,7 +9,7 @@ class Brev < Formula
     bin.install "brev"
 
     FileUtils.mkdir_p "completions/zsh"
-    system "bash", "-c", "bash #{bin}/brev completion zsh > completions/zsh/_bash"
+    system "bash", "-c", "#{bin}/brev completion zsh > completions/zsh/_brev"
     zsh_completion.install "completions/zsh/_brev"
   end
 
