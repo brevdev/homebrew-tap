@@ -14,8 +14,6 @@ class Brev < Formula
   end
 
   unless build.without? "completions"
-    bin.install "brev"
-
     FileUtils.mkdir_p "completions/zsh"
     FileUtils.mkdir_p "completions/bash"
 
