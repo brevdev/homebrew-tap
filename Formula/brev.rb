@@ -4,6 +4,8 @@ class Brev < Formula
   url "https://github.com/brevdev/brev-go-cli/releases/latest/download" 
   version "0.1.2"
 
+  option "without-completions", "Disable shell completion installation"
+
   bottle do
     root_url "https://github.com/brevdev/brev-go-cli/releases/latest/download"
     sha256 cellar: :any, arm64_big_sur: "e91d819895e76b3c1929ddf90337d1d3f1306ff21fd2def1eeedc1a0b185f358"
@@ -11,7 +13,7 @@ class Brev < Formula
     sha256 cellar: :any, catalina:      "cdf27c0f151ac6eea3fb7fe183fe005dd86273fa7cb39112bb35facce064e75a"
   end
 
-  def install
+  unless build.without? "completions"
     bin.install "brev"
 
     FileUtils.mkdir_p "completions/zsh"
