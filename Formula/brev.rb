@@ -7,10 +7,13 @@ class Brev < Formula
 
   def install
     if MacOS.version == :arm64_big_sur
+      ohai "Installing arm64_big_sur"
       bin.install "brev-arm64_big_sur" => "brev"
     elsif MacOS.version == :big_sur
+      ohai "Installing big_sur"
       bin.install "brev-big_sur" => "brev"
     elsif MacOS.version == :catalina
+      ohai "Installing catalina"
       bin.install "brev-catalina" => "brev"
     else
       odie "Incompatible MacOS version"
