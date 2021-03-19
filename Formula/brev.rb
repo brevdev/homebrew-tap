@@ -1,7 +1,7 @@
 class Brev < Formula
   desc "Brev CLI"
   homepage "https://brev.dev"
-  url "https://github.com/brevdev/brev-go-cli/releases/latest/download" 
+  url "https://github.com/brevdev/brev-go-cli.git"
   version "0.1.2"
 
   option "without-completions", "Disable shell completion installation"
