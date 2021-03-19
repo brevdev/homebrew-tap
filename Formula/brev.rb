@@ -6,14 +6,14 @@ class Brev < Formula
   version "0.1.2"
 
   def install
-    if :macos == :arm64_big_sur
+    if MacOS.version == :arm64_big_sur
       bin.install "brev-arm64_big_sur" => "brev"
-    end
-    if :macos == :big_sur
+    elsif MacOS.version == :big_sur
       bin.install "brev-big_sur" => "brev"
-    end
-    if :macos == :catalina
+    elsif MacOS.version == :catalina
       bin.install "brev-catalina" => "brev"
+    else
+      odie "Incompatible MacOS version"
     end
 
     FileUtils.mkdir_p "completions/zsh"
