@@ -1,12 +1,20 @@
 class Brev < Formula
   desc "Brev CLI"
   homepage "https://brev.dev"
-  url "https://github.com/brevdev/brev-go-cli/releases/latest/download/brev-osx-64.tar.gz"
-  sha256 "128890a70004c1bb14149f6bca25e40983328ffb3c78733716ac4c46dbee71f2"
+  url "https://github.com/brevdev/brev-go-cli/releases/latest/download/brev-homebrew-bundle.tar.gz"
+  sha256 "a1b7ab7b05953f1d0cd601c22f75c7ac161ecfa0aa10f3ee1ac862dbec48c5df"
   version "0.1.2"
 
   def install
-    bin.install "brev"
+    if :macos == :arm64_big_sur
+      bin.install "brev-arm64_big_sur" => "brev"
+    end
+    if :macos == :big_sur
+      bin.install "brev-big_sur" => "brev"
+    end
+    if :macos == :catalina
+      bin.install "brev-catalina" => "brev"
+    end
 
     FileUtils.mkdir_p "completions/zsh"
     FileUtils.mkdir_p "completions/bash"
