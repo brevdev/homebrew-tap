@@ -13,12 +13,14 @@ class Brev < Formula
     sha256 cellar: :any, catalina:      "cdf27c0f151ac6eea3fb7fe183fe005dd86273fa7cb39112bb35facce064e75a"
   end
 
-  unless build.without? "completions"
+  def install
+    bin.install "brev"
+
     FileUtils.mkdir_p "completions/zsh"
     FileUtils.mkdir_p "completions/bash"
 
-    system "bash", "-c", "brev completion zsh > completions/zsh/_brev"
-    system "bash", "-c", "brev completion bash > completions/bash/brev"
+    system "bash", "-c", "#{bin}/brev completion zsh > completions/zsh/_brev"
+    system "bash", "-c", "#{bin}/brev completion bash > completions/bash/brev"
 
     zsh_completion.install "completions/zsh/_brev"
     bash_completion.install "completions/bash/brev"
