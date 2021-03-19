@@ -6,9 +6,9 @@ class Brev < Formula
 
   bottle do
     root_url "https://github.com/brevdev/brev-go-cli/releases/latest/download"
-    sha256 catalina:      "a17f2ca9870c0b5eb9b8b64f67f48b5578315272d7ee421884a7b17de76adb3b"
-    sha256 big_sur:       "2ff502821e8917e8e893b5f0c88cc7edf584cfcff2a7d5ffba1f362d1b11e6f1"
-    sha256 arm64_big_sur: "c9546911fca4f402a5d25a9f585429296e7f38f9ff3157aaca755ddc4e95d12f"
+    sha256 catalina:      "6208bfffde7bb50e67a3e899ce776129ec7bf7ae67c4d7c1281682070ce403ba"
+    sha256 big_sur:       "4ec3d9b8568ea1a911e81836bd9862a932e20dd2da3a08e78316ee1aa53caed9"
+    sha256 arm64_big_sur: "e88d80fe7543d07cd0bbda3563d3b89678807503ff69af05e1473629353aff45"
   end
 
   def install
