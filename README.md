@@ -3,11 +3,10 @@
 
 ### Tap (required once)
 ```
-> brew tap brevdev/brev
+> brew tap brevdev/tap
 ```
 
 ### Install
 ```
 > brew install brev
 ```
-
