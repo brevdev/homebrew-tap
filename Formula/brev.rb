@@ -2,8 +2,8 @@ class Brev < Formula
   desc "Brev CLI"
   homepage "https://brev.dev"
   url "https://github.com/brevdev/brev-go-cli/releases/latest/download/brev-homebrew-bundle.tar.gz"
-  sha256 "a1b7ab7b05953f1d0cd601c22f75c7ac161ecfa0aa10f3ee1ac862dbec48c5df"
-  version "0.1.2"
+  sha256 "477e03ec44cb477dbbaa503934f4364291246773c4e13bdc37333a7f6a72ed0e"
+  version "0.1.3"
 
   def install
     if MacOS.version == :arm64_big_sur
