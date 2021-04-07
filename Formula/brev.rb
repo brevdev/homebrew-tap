@@ -2,8 +2,8 @@ class Brev < Formula
   desc "Brev CLI"
   homepage "https://brev.dev"
   url "https://github.com/brevdev/brev-go-cli/releases/latest/download/brev-homebrew-bundle.tar.gz"
-  sha256 "264f99615a1407eddb586e90c226e6ec425a009d79e594f1994ed8d4c6187562"
-  version "0.1.4"
+  sha256 "146f9503956b144571afceea7b8b2a65accb94974ca297b10fe8fdcd5d451a26"
+  version "0.1.5"
 
   def install
     if MacOS.version == :arm64_big_sur
@@ -15,6 +15,9 @@ class Brev < Formula
     elsif MacOS.version == :catalina
       ohai "Installing catalina"
       bin.install "brev-catalina" => "brev"
+    elsif MacOS.version == :mojave
+      ohai "Installing mojave"
+      bin.install "brev-mojave" => "brev"
     else
       odie "Incompatible MacOS version"
     end
