@@ -15,6 +15,9 @@ class Brev < Formula
     elsif MacOS.version == :catalina
       ohai "Installing catalina"
       bin.install "brev-catalina" => "brev"
+    elsif MacOS.version == :mojave
+      ohai "Installing mojave"
+      bin.install "brev-mojave" => "brev"
     else
       odie "Incompatible MacOS version"
     end
